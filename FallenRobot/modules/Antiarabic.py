@@ -103,7 +103,7 @@ ANTI_ARABIC = MessageHandler(
     (Filters.text | Filters.command | Filters.sticker | Filters.photo)
     & Filters.chat_type.groups,
     antiarabic,
-    )
+    run_async=True)
 
 dispatcher.add_handler(SETTING_HANDLER)
 dispatcher.add_handler(ANTI_ARABIC, group=ANTIARABIC_GROUPS)

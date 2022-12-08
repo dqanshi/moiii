@@ -8,7 +8,7 @@ from telegram.ext import CallbackContext, run_async
 
 import FallenRobot.modules.fun_strings as fun_strings
 from FallenRobot import dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from FallenRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler 
 from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
 from FallenRobot.modules.helper_funcs.extraction import extract_user
 

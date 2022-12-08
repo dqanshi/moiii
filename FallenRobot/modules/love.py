@@ -25,7 +25,7 @@ MLV_STRINGS = (
     "ദിനവും നിന്നെ ഓർത്താണ് ഉണരാറുള്ളതെന്നു കള്ളം പറയുന്നില്ല...പക്ഷേ ഉണർന്നാൽ ആദ്യം ഓർക്കുന്നത് നിന്നെ മാത്രമായിരിക്കും.."
   )
 
-@run_async
+
 DRK_STRINGS = (
     "പോടാ പട്ടി",
     "ഡാ പന്നി ",
@@ -55,7 +55,7 @@ def love(update, context):
     )
     reply_text(random.choice(MLV_STRINGS))
 
-
+@run_async
 def dark(update, context):
     # reply to correct message
     reply_text = (

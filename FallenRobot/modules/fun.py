@@ -325,6 +325,56 @@ def weebify(update: Update, context: CallbackContext):
         message.reply_text(string)
 
 
+
+
+@run_async
+def goodnight(update, context):
+    message = update.effective_message
+    reply = random.choice(fun_strings.GDNIGHT)
+    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+
+
+@run_async 
+def goodmorning(update, context):
+    message = update.effective_message
+    reply = random.choice(fun_strings.GDMORNING)
+    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+
+
+@run_async
+def abuse(update, context):
+    # reply to correct message
+    reply_text = (
+        update.effective_message.reply_to_message.reply_text
+        if update.effective_message.reply_to_message
+        else update.effective_message.reply_text
+    )
+    reply_text(random.choice(fun_strings.ABUSE_STRINGS))
+
+@run_async
+def kill(update, context):
+    # reply to correct message
+    reply_text = (
+        update.effective_message.reply_to_message.reply_text
+        if update.effective_message.reply_to_message
+        else update.effective_message.reply_text
+    )
+    reply_text(random.choice(fun_strings.KILL_STRINGS))
+
+@run_async
+def sing(update, context):
+    # reply to correct message
+    reply_text = (
+        update.effective_message.reply_to_message.reply_text
+        if update.effective_message.reply_to_message
+        else update.effective_message.reply_text
+    )
+    reply_text(random.choice(fun_strings.SING_STRINGS))
+
+
+
+
+
 __help__ = """
  ❍ /runs*:* reply a random string from an array of replies
  ❍ /slap*:* slap a user, or get slapped if not a reply
@@ -342,6 +392,7 @@ __help__ = """
  ❍ /8ball*:* predicts using 8ball method 
 """
 
+ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
@@ -356,6 +407,14 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
+SING_HANDLER = DisableAbleCommandHandler("sing", sing)
+KILL_HANDLER = DisableAbleCommandHandler("kill", kill)
+
+GDMORNING_HANDLER = DisableAbleMessageHandler(
+    Filters.regex(r"(?i)(good morning)"), goodmorning, friendly="goodmorning")
+GDNIGHT_HANDLER = DisableAbleMessageHandler(
+    Filters.regex(r"(?i)(good night)"), goodnight, friendly="goodnight")
+
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
@@ -371,6 +430,14 @@ dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(SING_HANDLER)
+dispatcher.add_handler(GDMORNING_HANDLER)
+dispatcher.add_handler(GDNIGHT_HANDLER)
+dispatcher.add_handler(ABUSE_HANDLER)
+dispatcher.add_handler(KILL_HANDLER)
+
+
+
 
 __mod_name__ = "Fᴜɴ​"
 __command_list__ = [
@@ -388,6 +455,9 @@ __command_list__ = [
     "shout",
     "weebify",
     "8ball",
+    "sing",
+    "kill",
+    "abuse",
 ]
 __handlers__ = [
     RUNS_HANDLER,
@@ -404,4 +474,9 @@ __handlers__ = [
     SHOUT_HANDLER,
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
+    GDMORNING_HANDLER,
+    GDNIGHT_HANDLER,
+    ABUSE_HANDLER,
+    KILL_HANDLER,
+    SING_HANDLER,
 ]

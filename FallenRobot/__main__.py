@@ -78,7 +78,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ I'm fox- management bot
+✪ I'm princess {}
 ────────────────────────
 ✪ Hit /help to see my available commands.
 """
@@ -89,10 +89,7 @@ buttons = [
         InlineKeyboardButton(text=" Add Me ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",),
         InlineKeyboardButton(text=" OWNER ", url="t.me/am_dq_fan"),
     ],
-    [
-        InlineKeyboardButton(text="HELP", callback_data="help_back"),
-        InlineKeyboardButton(text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}"),
-    ],
+    
 ]
 
 HELP_STRINGS = f"""

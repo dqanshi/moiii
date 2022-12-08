@@ -4,7 +4,7 @@ import time
 
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext, run_async
+from telegram.ext import CallbackContext, run_async, Filters,CommandHandler
 
 import FallenRobot.modules.fun_strings as fun_strings
 from FallenRobot import dispatcher

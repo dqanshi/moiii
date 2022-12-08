@@ -1,8 +1,8 @@
 import html
 import random
 import time
-from SiestaRobot import dispatcher
-from SiestaRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from FallenRobot import dispatcher
+from FallenRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext ,run_async,Filters,CommandHandler
 

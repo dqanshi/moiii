@@ -58,3 +58,4 @@ youtube_search
 youtube_search_python
 yt_dlp
 zalgo-text
+fontTools

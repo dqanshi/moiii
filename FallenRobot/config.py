@@ -2,12 +2,12 @@ class Config(object):
     LOGGER = True
 
   # Get this value from my.telegram.org/apps
-    API_ID = 14831989
-    API_HASH = "75156d6ac13293f935e50f4ec3a6f243"
+    API_ID = 
+    API_HASH = " "
 
     CASH_API_KEY = "omg"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-    DATABASE_URL = "postgres://database_uri_user:dFAywDlRiBPrNXOlR4D5Yc7MrmFZSaVu@dpg-cej9fqla4991ihm77mgg-a/database_uri"
+    DATABASE_URL = " "
     EVENT_LOGS = (-1001558733714)  # Event logs channel to note down important bot level events
 
     MONGO_DB_URI = "mongodb+srv://foxbot:<an12if..>@cluster0.cweve3x.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com

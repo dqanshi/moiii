@@ -10,7 +10,7 @@ class Config(object):
     DATABASE_URL = "postgres://gmkjrokjtglghk:178d22e2aaf46228ebc8bf806503a57eb5614a6a1c41d7bb444d14954e8db305@ec2-44-206-204-65.compute-1.amazonaws.com:5432/d3o592e2rckv13"
     EVENT_LOGS = (-1001558733714)  # Event logs channel to note down important bot level events
 
-    MONGO_DB_URI = "mongodb+srv://foxbot:<an12if..>@cluster0.cweve3x.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com
+    MONGO_DB_URI = "mongodb+srv://Dqanshi:<yakshi>@cluster0.hc1frvd.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com
 
   # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://telegra.ph/file/31ee1d1cce339094e2c93.mp4"

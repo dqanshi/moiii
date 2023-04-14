@@ -1,14 +1,7 @@
 import html
+import unicodedata as ud
 
-from alphabet_detector import AlphabetDetector
-from telegram import (
-    Chat,
-    ChatPermissions,
-    Message,
-    MessageEntity,
-    ParseMode,
-    TelegramError,
-)
+from telegram import ChatPermissions, MessageEntity, ParseMode, TelegramError
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, MessageHandler
 from telegram.ext.dispatcher import run_async
@@ -29,7 +22,10 @@ from FallenRobot.modules.helper_funcs.chat_status import (
 from FallenRobot.modules.log_channel import loggable
 from FallenRobot.modules.sql.approve_sql import is_approved
 
-ad = AlphabetDetector()
+
+def al_detect(unistr):
+    return set(ud.name(char).split(" ")[0] for char in unistr if char.isalpha())
+
 
 LOCK_TYPES = {
     "audio": Filters.audio,
@@ -372,7 +368,7 @@ def del_lockables(update, context):
         if lockable == "rtl":
             if sql.is_locked(chat.id, lockable) and can_delete(chat, context.bot.id):
                 if message.caption:
-                    check = ad.detect_alphabet("{}".format(message.caption))
+                    check = al_detect("{}".format(message.caption))
                     if "ARABIC" in check:
                         try:
                             message.delete()
@@ -383,7 +379,7 @@ def del_lockables(update, context):
                                 LOGGER.exception("ERROR in lockables")
                         break
                 if message.text:
-                    check = ad.detect_alphabet("{}".format(message.text))
+                    check = al_detect("{}".format(message.text))
                     if "ARABIC" in check:
                         try:
                             message.delete()

@@ -3,7 +3,7 @@ class Config(object):
 
   # Get this value from my.telegram.org/apps
     API_ID = 1207230
-    API_HASH = " "
+    API_HASH = "b89d2ee79c70c5fbf9299e34f16e27e0"
 
     CASH_API_KEY = "omg"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
@@ -17,7 +17,7 @@ class Config(object):
 
     SUPPORT_CHAT = "TeamFoxBots"  # Your Telegram support group chat username where your users will go and bother you
 
-    TOKEN = ""  # Get bot token from @BotFather on Telegram
+    TOKEN = "1060722149:AAFYnLxsgaFjfLbtGbxghMY75d2lBo_1s2M"  # Get bot token from @BotFather on Telegram
 
     TIME_API_KEY = "6E9UG7JETLHA"  # Get this value from https://timezonedb.com/api
 

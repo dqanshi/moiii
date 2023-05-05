@@ -58,6 +58,11 @@
          "required": true,
          "value": ""
       },
+      "DATABASE_URL": {
+         "description": "Required for database connections.",
+         "required": true,
+         "value": ""
+      },
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,

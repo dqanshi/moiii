@@ -1,5 +1,20 @@
+import json
+import os
+
+
+
+def get_user_list(config, key):
+    with open("{}/FallenRobot/{}".format(os.getcwd(), config), "r") as json_file:
+        return json.load(json_file)[key]
+
+
+
+
 class Config(object):
     LOGGER = True
+
+
+
 
   # Get this value from my.telegram.org/apps
     API_ID = 1207230
@@ -7,7 +22,7 @@ class Config(object):
 
     CASH_API_KEY = "omg"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-    DATABASE_URL = "postgres://eiiosuxtgmobok:2049bd7806d9afa9a4e7fe854d58f2141025d8b368673062cf0520be36f76f59@ec2-44-213-151-75.compute-1.amazonaws.com:5432/ddvp3g0crdio65"
+    DATABASE_URL = ""
     EVENT_LOGS = (-1001558733714)  # Event logs channel to note down important bot level events
 
     MONGO_DB_URI = "mongodb+srv://Dqanshi:<yakshi>@cluster0.hc1frvd.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com

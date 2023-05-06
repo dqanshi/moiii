@@ -37,4 +37,5 @@ async def astro(e):
 
 
 
-
+__mod_name__ = "horoscope"
+__command_list__ = ["hc"]

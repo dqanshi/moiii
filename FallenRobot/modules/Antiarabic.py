@@ -12,7 +12,7 @@ from FallenRobot.modules.sql import antiarabic_sql as sql
 
 ANTIARABIC_GROUPS = 12
 
-
+@run_async
 @user_admin
 def antiarabic_setting(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -39,7 +39,7 @@ def antiarabic_setting(update: Update, context: CallbackContext):
                 sql.chat_antiarabic(chat.id)),
                            parse_mode=ParseMode.MARKDOWN)
 
-
+@run_async
 @user_not_admin
 def antiarabic(update: Update, context: CallbackContext):
     bot = context.bot
@@ -102,7 +102,7 @@ SETTING_HANDLER = CommandHandler("antiarabic",
                                  antiarabic_setting)
 ANTI_ARABIC = MessageHandler(
     (Filters.text | Filters.command | Filters.sticker | Filters.photo)
-    & Filters.groups,
+    & filters=Filters.group,
     antiarabic)
 
 dispatcher.add_handler(SETTING_HANDLER)

@@ -5,7 +5,7 @@ from telegram.ext import CommandHandler, MessageHandler, run_async, Filters
 from telegram.utils.helpers import mention_html
 from FallenRobot import dispatcher, CallbackContext, LOGGER
 from FallenRobot import DRAGONS as SUDO_USERS
-from FallenRobot import user_not_admin, user_admin, can_delete, is_user_admin, bot_admin
+from FallenRobot modules.helper_funcs.chat_status import user_not_admin, user_admin, can_delete, is_user_admin, bot_admin
 from FallenRobot import loggable
 from FallenRobot.modules.helper_funcs.extraction import extract_text
 from FallenRobot.modules.sql import antiarabic_sql as sql

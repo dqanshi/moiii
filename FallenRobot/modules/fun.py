@@ -66,9 +66,12 @@ def slap(update: Update, context: CallbackContext):
 
     curr_user = html.escape(message.from_user.first_name)
     user_id = extract_user(message, args)
-
+    
+    if user_id == OWNER_ID:
+        temp = random.choice(fun_strings.SLAP_ANSHI_TEMPLATES)
+    
     if user_id == bot.id:
-        temp = random.choice(fun_strings.SLAP_FALLEN_TEMPLATES)
+        temp = random.choice(fun_strings.SLAP_SAITAMA_TEMPLATES)
 
         if isinstance(temp, list):
             if temp[2] == "tmute":

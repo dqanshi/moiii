@@ -3,12 +3,12 @@ from typing import Optional, List
 from telegram import Message, Chat, Update, Bot, User, ParseMode
 from telegram.ext import CommandHandler, MessageHandler, run_async, Filters
 from telegram.utils.helpers import mention_html
-from SiestaRobot import dispatcher, CallbackContext, LOGGER
-from SiestaRobot import DRAGONS as SUDO_USERS
-from SiestaRobot.modules.helper_funcs.chat_status import user_not_admin, user_admin, can_delete, is_user_admin, bot_admin
-from SiestaRobot.modules.log_channel import loggable
-from SiestaRobot.modules.helper_funcs.extraction import extract_text
-from SiestaRobot.modules.sql import antiarabic_sql as sql
+from FallenRobot import dispatcher, CallbackContext, LOGGER
+from FallenRobot import DRAGONS as SUDO_USERS
+from FallenRobot import user_not_admin, user_admin, can_delete, is_user_admin, bot_admin
+from FallenRobot import loggable
+from FallenRobot.modules.helper_funcs.extraction import extract_text
+from FallenRobot.modules.sql import antiarabic_sql as sql
 
 ANTIARABIC_GROUPS = 12
 
@@ -99,13 +99,11 @@ AntiArabicScript module is used to delete messages containing characters from on
 """
 
 SETTING_HANDLER = CommandHandler("antiarabic",
-                                 antiarabic_setting,
-                                 run_async=True)
+                                 antiarabic_setting)
 ANTI_ARABIC = MessageHandler(
     (Filters.text | Filters.command | Filters.sticker | Filters.photo)
     & Filters.chat_type.groups,
-    antiarabic,
-    run_async=True)
+    antiarabic)
 
 dispatcher.add_handler(SETTING_HANDLER)
 dispatcher.add_handler(ANTI_ARABIC, group=ANTIARABIC_GROUPS)

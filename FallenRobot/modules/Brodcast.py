@@ -38,3 +38,6 @@ async def broadcast_message(_, message):
             pass
     await m.edit(f"**Broadcasted Message In {sent} Chats.**")
 
+
+    __mod_name__ = "Bcast"
+    

@@ -15,35 +15,10 @@ coupledb = db.couple
 chatsdb = db.chats
 usersdb = db.users
 
-async def _get_lovers(chat_id: int):
-    lovers = await coupledb.find_one({"chat_id": chat_id})
-    if lovers:
-        lovers = lovers["couple"]
-    else:
-        lovers = {}
-    return lovers
 
-
-async def get_couple(chat_id: int, date: str):
-    lovers = await _get_lovers(chat_id)
-    if date in lovers:
-        return lovers[date]
-    else:
-        return False
-
-
-async def save_couple(chat_id: int, date: str, couple: dict):
-    lovers = await _get_lovers(chat_id)
-    lovers[date] = couple
-    await coupledb.update_one(
-        {"chat_id": chat_id},
-        {"$set": {"couple": lovers}},
-        upsert=True,
-    )
 
     
-    
-    async def is_served_chat(chat_id: int) -> bool:
+async def is_served_chat(chat_id: int) -> bool:
     chat = await chatsdb.find_one({"chat_id": chat_id})
     return bool(chat)
 
@@ -93,4 +68,32 @@ async def add_served_user(user_id: int):
         return
     return await usersdb.insert_one({"user_id": user_id})
 
+    
+    
+async def _get_lovers(chat_id: int):
+    lovers = await coupledb.find_one({"chat_id": chat_id})
+    if lovers:
+        lovers = lovers["couple"]
+    else:
+        lovers = {}
+    return lovers
+
+
+async def get_couple(chat_id: int, date: str):
+    lovers = await _get_lovers(chat_id)
+    if date in lovers:
+        return lovers[date]
+    else:
+        return False
+
+
+async def save_couple(chat_id: int, date: str, couple: dict):
+    lovers = await _get_lovers(chat_id)
+    lovers[date] = couple
+    await coupledb.update_one(
+        {"chat_id": chat_id},
+        {"$set": {"couple": lovers}},
+        upsert=True,
+    )
+    
     

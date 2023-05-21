@@ -9,7 +9,7 @@ from pyrogram.errors import FloodWait
 
 from FallenRobot.utils.errors import capture_err
 
-from FallenRobot import OWNENER_ID,pbot as app
+from FallenRobot import OWNER_ID,pbot as app
 
 from FallenRobot.utils.mongo import (get_served_chats)
 

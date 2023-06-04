@@ -22,7 +22,7 @@ class Config(object):
 
     CASH_API_KEY = "omg"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-    DATABASE_URL = "postgres://ajvhuxydyswwpw:9c6536f419429bdf8b15ba064e96e09add176b4f192e61eb5ea0a9e30f7f9fd2@ec2-52-21-233-246.compute-1.amazonaws.com:5432/ddr2o7kmgv7ha"
+    DATABASE_URL = "postgres://rsuazfei:2ia__Zxinz9DUNcv_xOMDZWwL5JYfeEU@silly.db.elephantsql.com/rsuazfei"
     EVENT_LOGS = (-1001558733714)  # Event logs channel to note down important bot level events
 
     MONGO_DB_URI = "mongodb+srv://Dqmusic:an12if@cluster0.if5dy.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com

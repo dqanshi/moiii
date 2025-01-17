@@ -74,6 +74,7 @@ def callbackquery(**args):
 
     return decorator
 
+Error: module 'inspect' has no attribute 'getargspec'
 
 def bot(**args):
     pattern = args.get("pattern")

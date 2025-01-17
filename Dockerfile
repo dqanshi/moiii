@@ -1,5 +1,5 @@
-# Use the official Python 3.8 slim-buster base image
-FROM python:3.8.5-slim-buster
+# Use the official Python 3.10 slim-buster base image
+FROM python:3.10.11-slim-buster
 
 # Disable cache for pip and set default environment variables
 ENV PIP_NO_CACHE_DIR=1 \

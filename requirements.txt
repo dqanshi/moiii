@@ -33,7 +33,7 @@ nltk
 opencv-python-headless==4.7.0.72
 
 pytz
-pymongo
+pymongo==3.12.3
 
 pillow==9.5.0
 pretty_errors==1.2.25

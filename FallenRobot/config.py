@@ -32,7 +32,7 @@ class Config(object):
 
     SUPPORT_CHAT = "dbots_supportchat"  # Your Telegram support group chat username where your users will go and bother you
 
-    TOKEN = ""  # Get bot token from @BotFather on Telegram
+    TOKEN = "1060722149:AAHU02zRerIJZwFX0lwVvJRbZIs-tt_O3-E"  # Get bot token from @BotFather on Telegram
 
     TIME_API_KEY = "6E9UG7JETLHA"  # Get this value from https://timezonedb.com/api
 

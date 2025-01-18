@@ -1,0 +1,39 @@
+name: Deploy to Hugging Face
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Docker Buildx (for multi-platform builds)
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    # Step 3: Build the Docker image
+    - name: Build Docker image
+      run: |
+        docker build -t huggingface/space-bot .
+
+    # Step 4: Push Docker image to Hugging Face Spaces
+    - name: Push Docker image to Hugging Face
+      run: |
+        # Tag the Docker image for Hugging Face Spaces
+        docker tag huggingface/space-bot huggingface.co/spaces/your-username/your-space-name:latest
+        
+        # Push the Docker image to Hugging Face Spaces
+        docker push huggingface.co/spaces/your-username/your-space-name:latest
+
+    # Step 5: Push code to Hugging Face Space (optional, if code changes are involved)
+    - name: Push code to Hugging Face Space
+      run: |
+        git remote add hf https://huggingface.co/spaces/dqanshi/Telegrambot
+        git push hf main --force

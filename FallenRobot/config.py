@@ -54,7 +54,7 @@ class Config(object):
     NO_LOAD = ["rss", "cleaner", "connection", "math","chatbot" ]
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
-    WORKERS = (8)
+    WORKERS = (1)
 
 class Production(Config):
     LOGGER = True

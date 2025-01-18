@@ -27,10 +27,10 @@ jobs:
     - name: Push Docker image to Hugging Face
       run: |
         # Tag the Docker image for Hugging Face Spaces
-        docker tag huggingface/space-bot huggingface.co/spaces/your-username/your-space-name:latest
+        docker tag huggingface/space-bot huggingface.co/spaces/dqanshi/Telegrambot:latest
         
         # Push the Docker image to Hugging Face Spaces
-        docker push huggingface.co/spaces/your-username/your-space-name:latest
+        docker push huggingface.co/spaces/dqanahi/Telegrambot:latest
 
     # Step 5: Push code to Hugging Face Space (optional, if code changes are involved)
     - name: Push code to Hugging Face Space

@@ -2,7 +2,7 @@
 
 services:
   - name: telegram-bot
-    type: private
+    type: worker
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt

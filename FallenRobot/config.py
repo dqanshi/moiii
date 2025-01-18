@@ -51,7 +51,7 @@ class Config(object):
     DEL_CMDS = True
     INFOPIC = True
     LOAD = []
-    NO_LOAD = ["rss", "cleaner", "connection", "math"]
+    NO_LOAD = ["rss", "cleaner", "connection", "math","chatbot" ]
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
     WORKERS = (8)

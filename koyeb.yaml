@@ -1,0 +1,12 @@
+name: telegram-bot
+description: Deploy a free Telegram bot on Koyeb using worker type
+
+services:
+  - name: bot-worker
+    type: worker
+    description: Telegram bot service running in worker mode
+    instance:
+      type: Free  # Free-tier instance
+    build:
+      type: docker
+      dockerfile_path: ./Dockerfile  # Path to your Dockerfile
